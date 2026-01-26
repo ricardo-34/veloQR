@@ -89,62 +89,18 @@
         .logo-icon {
             width: 48px;
             height: 48px;
-            background: linear-gradient(135deg, var(--electric-blue), var(--accent-cyan));
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.25);
         }
 
-        .logo-icon::before {
-            content: '';
-            position: absolute;
+        .logo-icon img {
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0%, 100% {
-                transform: translateX(-100%) rotate(45deg);
-            }
-            50% {
-                transform: translateX(100%) rotate(45deg);
-            }
-        }
-
-        .logo-icon svg {
-            width: 28px;
-            height: 28px;
-            fill: white;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Logo en el centro de la página */
-        .center-logo {
-            text-align: center;
-            margin-bottom: 2rem;
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
-        }
-
-        .center-logo-container {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem 2rem;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 4px 24px rgba(0, 102, 255, 0.1);
-        }
-
-        .center-logo-icon {
-            width: 64px;
-            height: 64px;
+            object-fit: contain;
         }
 
         .logo-text {
@@ -192,15 +148,9 @@
         .hero {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 4rem 5% 2rem;
+            padding: 2rem 5% 2rem;
             position: relative;
             z-index: 1;
-        }
-
-        .hero-content {
-            text-align: center;
-            margin-bottom: 4rem;
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
         }
 
         @keyframes fadeInUp {
@@ -212,27 +162,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        h1 {
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--deep-charcoal) 0%, var(--electric-blue) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.03em;
-        }
-
-        .tagline {
-            font-size: clamp(1.25rem, 3vw, 1.75rem);
-            color: var(--text-muted);
-            font-weight: 300;
-            letter-spacing: -0.01em;
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         /* Generator Container */
@@ -248,7 +177,7 @@
                 0 40px 100px rgba(0, 102, 255, 0.08);
             position: relative;
             overflow: hidden;
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s backwards;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
         }
 
         .generator-container::before {
@@ -940,10 +869,6 @@
                 padding: 2rem 5%;
             }
 
-            h1 {
-                font-size: 2.5rem;
-            }
-
             .generator-container {
                 padding: 2rem 1.5rem;
                 border-radius: 24px;
@@ -998,9 +923,7 @@
     <header>
         <a href="#" class="logo">
             <div class="logo-icon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z"/>
-                </svg>
+                <img src="logo.png" alt="VeloQR Logo">
             </div>
             <span class="logo-text">VeloQR</span>
         </a>
@@ -1013,37 +936,6 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="center-logo">
-            <div class="center-logo-container">
-                <svg class="center-logo-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#0066FF;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#00D9FF;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <!-- QR Squares -->
-                    <rect x="4" y="4" width="12" height="12" rx="2" fill="url(#logoGrad)"/>
-                    <rect x="48" y="4" width="12" height="12" rx="2" fill="url(#logoGrad)"/>
-                    <rect x="4" y="48" width="12" height="12" rx="2" fill="url(#logoGrad)"/>
-                    <rect x="6" y="6" width="8" height="8" fill="white"/>
-                    <rect x="50" y="6" width="8" height="8" fill="white"/>
-                    <rect x="6" y="50" width="8" height="8" fill="white"/>
-                    <!-- Lightning bolt in center -->
-                    <path d="M38 8L24 32h10l-4 24 14-24H34l4-24z" fill="url(#logoGrad)"/>
-                    <!-- Decorative dots -->
-                    <circle cx="26" cy="8" r="2" fill="url(#logoGrad)"/>
-                    <circle cx="56" cy="26" r="2" fill="url(#logoGrad)"/>
-                    <circle cx="8" cy="38" r="2" fill="url(#logoGrad)"/>
-                </svg>
-            </div>
-        </div>
-        
-        <div class="hero-content">
-            <h1>Códigos QR<br>al Instante</h1>
-            <p class="tagline">Instant codes. Zero friction.</p>
-        </div>
-
         <!-- Generator -->
         <div class="generator-container" id="generator">
             <div class="input-section">
