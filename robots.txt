@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://veloqr.vercel.app/sitemap.xml
